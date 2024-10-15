@@ -34,13 +34,17 @@ public class StringProcessor {
     }
 
     //calculates the number of words in the provided sentence
-    public int calculateWords(String sentence) {
-        if (sentence == null || sentence.trim().isEmpty()) {
-            return 0;
+    public int calculateWords(String input) {
+            if (input == null || input.trim().isEmpty()) {
+                return 0;
+            }
+
+            //plit the string by spaces and filter out empty strings
+            String[] words = input.trim().split("\\s+");
+            return words.length;
         }
-        String[] words = sentence.trim().split("\\s+");
-        return words.length;
-    }
+
+
 
     //evaluates a math expression given as a string
     public double calculateExpression(String expression) {
@@ -107,6 +111,6 @@ public class StringProcessor {
                 }
             }
         }
-        return -1; 
+        return -1; // No closing bracket found
     }
 }
